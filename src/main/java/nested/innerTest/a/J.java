@@ -12,7 +12,6 @@ public class J {
     }
 
     public class II extends Iimpl {
-
     }
 
     public static void main(String[] args) {
