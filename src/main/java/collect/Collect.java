@@ -2,16 +2,7 @@ package collect;
 
 import stat.St;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NavigableSet;
-import java.util.Queue;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Collect {
     public static void main(String[] args) {
@@ -49,6 +40,19 @@ public class Collect {
         System.out.println(set.last());
         SortedSet<String> set2 = set.headSet("2");
         //set
+        testLoop();
+
+        for(var penguin : new int[2])
+            System.out.println(penguin);
+
+        final var s = "A";
+        final String j = "1";
+        switch (args[0]) {
+            case s:
+                System.out.println("!");
+            case j:
+                System.out.println("!!");
+        }
     }
 
     public static <T> T getT(T t) {
@@ -62,5 +66,12 @@ public class Collect {
 
     public static <T, U> String call(T t, U u) {
         return (String) t;
+    }
+
+    private static void testLoop() {
+        int[] weather = new int [] {0 , 1, 2, 3, 4, 5};
+        for (int i=0; i<=weather.length-1; i++) {
+            System.out.println(weather[i]);
+        }
     }
 }
