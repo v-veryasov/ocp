@@ -1,6 +1,4 @@
-package collect;
-
-import stat.St;
+package collection;
 
 import java.util.*;
 
@@ -17,10 +15,11 @@ public class Collect {
         Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < 5; i++)
             q.add(i);
-        System.out.println(q.peek() + " and size = " + q.size());
-        System.out.println(q.element() + " and size = " + q.size());
-        System.out.println(q.poll() + " and size = " + q.size());
-        System.out.println(q.offer(12) + " and size = " + q.size());
+        q.forEach(System.out::println);
+        //System.out.println(q.peek() + " and size = " + q.size());
+        //System.out.println(q.element() + " and size = " + q.size());
+        //System.out.println(q.poll() + " and size = " + q.size());
+        //System.out.println(q.offer(12) + " and size = " + q.size());
         System.out.println();
 
         Deque<String> stack = new ArrayDeque<>();

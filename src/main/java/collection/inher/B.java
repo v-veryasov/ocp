@@ -1,6 +1,4 @@
-package collect.inher;
-
-import stat.St;
+package collection.inher;
 
 import java.util.ArrayList;
 import java.util.List;

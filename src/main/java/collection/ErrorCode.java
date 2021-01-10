@@ -1,4 +1,4 @@
-package collect;
+package collection;
 
 public enum ErrorCode {
 
