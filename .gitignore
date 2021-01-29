@@ -1,0 +1,9 @@
+*.iml
+*.jpr
+.idea
+target
+distr
+distrib
+shared-lib/*.jar
+.mvn
+/ear/*.ear
