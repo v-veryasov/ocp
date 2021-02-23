@@ -1,13 +1,13 @@
 package sort;
 
-// n(log(n)) | больше потребяет памяти, чем quiq
+// n(log(n)) | больше потребяет памяти, чем Quick
 public class Merge {
     public static void main(String[] args) {
 
     }
 
     void merge(int arr[], int l, int m, int r) {
-        // Find sizes of two subarrays to be merged
+        // Find sizes of two subArrays to be merged
         int n1 = m - l + 1;
         int n2 = r - m;
 
@@ -23,10 +23,10 @@ public class Merge {
 
         /* Merge the temp arrays */
 
-        // Initial indexes of first and second subarrays
+        // Initial indexes of first and second subArrays
         int i = 0, j = 0;
 
-        // Initial index of merged subarry array
+        // Initial index of merged subArry array
         int k = l;
         while (i < n1 && j < n2) {
             if (L[i] <= R[j]) {
