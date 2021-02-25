@@ -1,11 +1,11 @@
-package sort;
+package algo.sort;
 
 import java.util.Arrays;
 
 // n^2
 public class Bubble {
     public static void main(String[] args) {
-        int[] i = new int[] {4, 3, 6, 5};
+        int[] i = new int[]{4, 4, 3, 6, 5};
         bubbleSort(i);
         System.out.println(Arrays.toString(i));
     }

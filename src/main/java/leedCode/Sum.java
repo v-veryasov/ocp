@@ -19,7 +19,7 @@ public class Sum {
     public static List<List<Integer>> generate(int numRows) {
         var list = new LinkedList<List<Integer>>();
         for (int i = 0; i < numRows; i++) {
-            list.add()
+//            list.add()
         }
 
 

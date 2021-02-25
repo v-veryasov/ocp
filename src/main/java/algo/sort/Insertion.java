@@ -1,11 +1,11 @@
-package sort;
+package algo.sort;
 
 import java.util.Arrays;
 
 // n^2
 public class Insertion {
     public static void main(String[] args) {
-        int[] i = new int[]{1, 2, 5, 4, 3, 6};
+        int[] i = new int[]{4, 2, 8, 1, 5, 6};
         sort(i);
         System.out.println(Arrays.toString(i));
     }

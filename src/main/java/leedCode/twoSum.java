@@ -3,7 +3,7 @@ package leedCode;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Solution {
+public class twoSum {
     public static void main(String[] args) {
         int[] ints = new int[1_000_000];
         Random random = new Random();
