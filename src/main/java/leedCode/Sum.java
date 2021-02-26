@@ -23,19 +23,17 @@ public class Sum {
         }
 
 
-
-
-            list.add(List.of(1));
-           list.add(List.of(1, 1));
-          list.add(List.of(1, 2, 1));
-         list.add(List.of(1, 3, 3, 1));
+        list.add(List.of(1));
+        list.add(List.of(1, 1));
+        list.add(List.of(1, 2, 1));
+        list.add(List.of(1, 3, 3, 1));
         list.add(List.of(1, 4, 6, 4, 1));
         Iterator<List<Integer>> iterator = list.descendingIterator();
         int del = 5 - Math.min(numRows, 5);
         while (iterator.hasNext() && del != 0) {
             iterator.next();
             iterator.remove();
-           del--;
+            del--;
         }
         return list;
     }
