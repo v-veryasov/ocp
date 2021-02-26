@@ -5,10 +5,49 @@ import java.util.Arrays;
 // n(log(n)) | больше потребяет памяти, чем Quick
 public class Merge {
     public static void main(String[] args) {
-        int[] i = new int[]{4, 2, 8, 1, 5, 6};
-        mergeSort(i, 0, i.length - 1);
+        int[] i = new int[]{4, 2, 8, 1, 5, 6, 7, 3};
+        mergeSort2(i, 0, i.length - 1);
         System.out.println(Arrays.toString(i));
     }
+
+    public static void mergeSort2(int[] array, int start, int end) {
+        if (start < end) {
+            int mid = (start + end) / 2;
+            mergeSort2(array, start, mid);
+            mergeSort2(array, mid + 1, end);
+            merge2(array, start, mid, end);
+        }
+    }
+
+    public static void merge2(int arr[], int start, int mid, int end) {
+        System.out.println("start " + start + " min " + mid + " end " + end);
+
+        // вычисляем длину
+        int lengthLeft = mid - start + 1;
+        int lengthRight = end - mid;
+
+        // создаем временные подмассивы
+        int leftArray[] = new int[lengthLeft];
+        int rightArray[] = new int[lengthRight];
+
+        int n = arr.length - 1;
+
+        if (n < 2) {
+            return;
+        }
+
+        // копируем отсортированные массивы во временные
+        for (int i = 0; i < lengthLeft; i++) {
+            leftArray[i] = arr[start + 1];
+//            System.out.println("leftArray[] " + leftArray[i]);
+        }
+        for (int i = 0; i < lengthRight; i++) {
+            rightArray[i] = arr[mid + i + 1];
+//            System.out.println("rightArray[] " + rightArray[i]);
+        }
+//        System.out.println("leftArray " + lengthLeft + " lengthRight " + lengthRight);
+    }
+
 
     public static void mergeSort(int[] array, int left, int right) {
         if (right <= left) return;

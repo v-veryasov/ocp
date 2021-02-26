@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Insertion {
     public static void main(String[] args) {
         int[] i = new int[]{4, 2, 8, 1, 5, 6};
-        sort(i);
+        sort2(i);
         System.out.println(Arrays.toString(i));
     }
 
@@ -26,4 +26,19 @@ public class Insertion {
             arr[j + 1] = key;
         }
     }
+
+    private static void sort2(int arr[]) {
+        for (int i = 1; i < arr.length; i++) {
+            int idxKey = i;
+            int iter = i - 1;
+            while (iter >= 0 && arr[iter] > arr[idxKey]) {
+                int temp = arr[idxKey];
+                arr[idxKey] = arr[iter];
+                arr[iter] = temp;
+                iter--;
+                idxKey--;
+            }
+        }
+    }
+
 }
