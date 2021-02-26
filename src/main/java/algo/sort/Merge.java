@@ -5,7 +5,7 @@ import java.util.Arrays;
 // n(log(n)) | больше потребяет памяти, чем Quick
 public class Merge {
     public static void main(String[] args) {
-        int[] i = new int[]{1, 2, 8, 1, 5, 6, 7, 3, 9};
+        int[] i = new int[]{1, 9, 8, 4, 6, 5, 7, 3};
         mergeSort(i, 1, i.length);
         System.out.println(Arrays.toString(i));
     }
@@ -52,7 +52,7 @@ public class Merge {
     public static void mergeSort(int[] array, int left, int right) {
         if (right <= left)
             return;
-        int mid = (left + right) / 2;
+        int mid = left + (right - left) / 2;
         mergeSort(array, left, mid);
         mergeSort(array, mid + 1, right);
         merge2(array, left, mid, right);
