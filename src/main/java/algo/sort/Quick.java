@@ -6,9 +6,37 @@ import java.util.Arrays;
 public class Quick {
     public static void main(String[] args) {
         int[] i = new int[]{4, 2, 8, 1, 5, 6};
-        quickSort(i, 0, i.length - 1);
+        sort(i, 0, i.length - 1);
         System.out.println(Arrays.toString(i));
     }
+
+    // все значения это интдексы
+    public static void sort(int[] array, int begin, int end) {
+        if (end <= begin)
+            return;
+        int pivot = partition2(array, begin, end);
+        sort(array, begin, pivot - 1);
+        sort(array, pivot + 1, end);
+    }
+
+    static int partition2(int[] array, int begin, int end) {
+        int nIdxPiv = begin;
+
+        for (int i = begin; i < end; i++) {
+            if (array[i] <= array[end]) {
+                int temp = array[i];
+                array[i] = array[nIdxPiv];
+                array[nIdxPiv] = temp;
+                nIdxPiv++;
+            }
+        }
+        int temp = array[nIdxPiv];
+        array[nIdxPiv] = array[end];
+        array[end] = temp;
+
+        return nIdxPiv;
+    }
+
 
     static int partition(int[] array, int begin, int end) {
         int pivot = end;
