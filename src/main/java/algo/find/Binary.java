@@ -3,7 +3,9 @@ package algo.find;
 //O(log (N))
 public class Binary extends Find {
     public static void main(String[] args) {
-        int index = binarySearch(new int[]{11, 24, 26, 67, 76, 88}, 67);
+        int[] arr = new int[]{11, 24, 26, 67, 76, 88};
+        //int index = binarySearch(arr, 67);
+        int index = recursiveBinarySearch(arr, 0, arr.length, 26);
         print(67, index);
     }
 
@@ -36,21 +38,20 @@ public class Binary extends Find {
 
     public static int recursiveBinarySearch(int arr[], int firstElement, int lastElement, int elementToSearch) {
 
-        // условие прекращения
         if (lastElement >= firstElement) {
             int mid = firstElement + (lastElement - firstElement) / 2;
 
-            // если средний элемент - целевой элемент, вернуть его индекс
-            if (arr[mid] == elementToSearch)
+            if (arr[mid] == elementToSearch) {
                 return mid;
+            }
 
-            // если средний элемент больше целевого
-            // вызываем метод рекурсивно по суженным данным
-            if (arr[mid] > elementToSearch)
+            if (arr[mid] > elementToSearch) {
                 return recursiveBinarySearch(arr, firstElement, mid - 1, elementToSearch);
+            }
+            if (arr[mid] < elementToSearch) {
+                return recursiveBinarySearch(arr, mid + 1, lastElement, elementToSearch);
+            }
 
-            // также, вызываем метод рекурсивно по суженным данным
-            return recursiveBinarySearch(arr, mid + 1, lastElement, elementToSearch);
         }
 
         return -1;
