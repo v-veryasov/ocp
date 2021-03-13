@@ -24,7 +24,7 @@ public class LFUCache {
         int count = freqQueue.get(key);
         leastQueue.get(count).remove((Integer) key);
         freqQueue.put(key, ++count);
-        addFirst(key, count);
+        addFirstInLeastQueue(key, count);
         return map.get(key);
     }
 
@@ -49,10 +49,10 @@ public class LFUCache {
         }
         freqQueue.put(key, count);
         map.put(key, value);
-        addFirst(key, count);
+        addFirstInLeastQueue(key, count);
     }
 
-    private void addFirst(int key, int count) {
+    private void addFirstInLeastQueue(int key, int count) {
         var obj = leastQueue.get(count);
         if (obj != null) {
             obj.addFirst(key);
