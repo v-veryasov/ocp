@@ -1,5 +1,9 @@
 package pattern.pa.abstractFactory;
 
-public interface AbstractFactory<T> {
-    T create();
+import pattern.pa.abstractFactory.dto.Animal;
+import pattern.pa.abstractFactory.dto.Color;
+
+public interface AbstractFactory {
+    Animal createAnimal();
+    Color createColor();
 }
